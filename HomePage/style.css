@@ -1,0 +1,10 @@
+body {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.laptop-view-banner{
+    float: left;
+    margin-left: -15px;
+    height: 120px;
+    background-color: rgb(0, 0, 0);
+}

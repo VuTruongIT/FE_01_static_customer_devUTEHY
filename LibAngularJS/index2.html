@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS & Material Design Web Interface</title>
+  
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  
+  <!-- Angular Material CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.24/angular-material.min.css">
+  
+  <!-- Angular Material JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.24/angular-material.min.js"></script>
+  
+  <!-- Angular Animate and Aria (required by Angular Material) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+  
+  <!-- Angular Messages (required by Angular Material) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    md-toolbar {
+      background-color: #3f51b5;
+      color: white;
+    }
+    .container {
+      padding: 20px;
+    }
+    .md-card {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body ng-controller="MainController as ctrl">
+
+  <!-- Toolbar (Navigation Bar) -->
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>My Beautiful Web App</h2>
+      <span flex></span>
+      <md-button class="md-raised" ng-click="ctrl.showAlert($event)">Alert</md-button>
+      <md-button class="md-raised">Login</md-button>
+    </div>
+  </md-toolbar>
+
+  <!-- Main content container -->
+  <div class="container" layout="column" layout-align="start center">
+    <!-- Cards -->
+    <md-card class="md-card" ng-repeat="card in ctrl.cards">
+      <md-card-header>
+        <md-card-header-text>
+          <span class="md-title">{{ card.title }}</span>
+        </md-card-header-text>
+      </md-card-header>
+      <md-card-content>
+        <p>{{ card.description }}</p>
+      </md-card-content>
+      <md-card-actions>
+        <md-button class="md-raised md-primary">Read More</md-button>
+      </md-card-actions>
+    </md-card>
+
+    <!-- Table -->
+    <md-content layout-padding>
+      <table md-table>
+        <thead>
+          <tr md-row>
+            <th md-column>Product</th>
+            <th md-column>Price</th>
+            <th md-column>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr md-row ng-repeat="item in ctrl.products">
+            <td md-cell>{{ item.name }}</td>
+            <td md-cell>{{ item.price | currency }}</td>
+            <td md-cell>{{ item.quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </md-content>
+  </div>
+
+  <!-- AngularJS and Angular Material script -->
+  <script>
+    angular.module('myApp', ['ngMaterial'])
+      .controller('MainController', function($mdDialog) {
+        var self = this;
+
+        // Sample cards
+        self.cards = [
+          { title: 'Card 1', description: 'This is a beautiful card with rich content.' },
+          { title: 'Card 2', description: 'This card has more insightful information.' },
+          { title: 'Card 3', description: 'Click to discover more about this card.' }
+        ];
+
+        // Sample products for table
+        self.products = [
+          { name: 'Apple', price: 1.20, quantity: 10 },
+          { name: 'Banana', price: 0.80, quantity: 20 },
+          { name: 'Orange', price: 1.50, quantity: 15 }
+        ];
+
+        // Function to show alert
+        self.showAlert = function(ev) {
+          $mdDialog.show(
+            $mdDialog.alert()
+              .clickOutsideToClose(true)
+              .title('Alert Dialog')
+              .textContent('You clicked the alert button!')
+              .ok('Got it!')
+              .targetEvent(ev)
+          );
+        };
+      });
+  </script>
+
+</body>
+</html>
