@@ -4,7 +4,321 @@ body {
 
 .laptop-view-banner{
     float: left;
-    margin-left: -15px;
-    height: 120px;
+    /* margin-left: -15px; */
+    height: 90px;
+    width: 100%;
     background-color: rgb(0, 0, 0);
+}
+
+.banner-top-1-danhmuc{
+    float: left;
+    background-color: #FFFFFF;
+    height: 65%;
+    width: 100%;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    }
+    #section1 {
+    background-color: #6f5c5e;
+    }
+    #section2 {
+    background-color: #d1ecf1;
+    }
+    #section3 {
+    background-color: #d4edda;
+    }
+    #section4 {
+    background-color: #c3e6cb;
+}
+
+
+ul{
+    list-style: none;
+}
+
+.menu{
+    background-color: #ffffff;
+    float: left;
+    text-align: center;
+}
+
+.menu ul{
+    display: inline-flex;
+    list-style: none;
+    color: #FFF;
+    margin-left: -35px;
+}
+
+.menu ul li{
+    width: 105px;
+    margin: 5px 2px;
+    padding: 20px 5px;
+    margin-top: -5px;
+}
+
+.menu ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+.active,.menu ul li:hover{
+    background: #0fd180;
+    transition:0.6s ;
+}
+.active,.menu ul li:hover a{
+    transition:0.1s ;
+    color: white;
+}
+
+
+.active,.menu ul li::before{
+    background: #7cb3ae;
+    transition:0.6s ;
+}
+
+.box-submenu{
+    display: none;
+}
+
+.menu ul li:hover .box-submenu{
+    display: block;
+    position: absolute;
+    background: #7cb3ae;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+.menu ul li:hover .box-submenu ul{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu ul li:hover .box-submenu ul li{
+    width: 220px;
+    text-align: left;
+    border-bottom: dotted 1px #FFF;
+    background: transparent;
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+.menu ul li:hover .box-submenu ul li:last-child{
+    border-bottom: none;
+}
+
+.menu ul li:hover .box-submenu ul li a:hover{
+    color: #333;
+}
+
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.form-control {
+    border-radius: 20px 0 0 20px;
+    border: 1px solid #ccc;
+    height: 40px;
+}
+
+.btn-outline-secondary {
+    border-radius: 0 20px 20px 0;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: black;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #ccc;
+}
+
+.col-xl-3 {
+    padding: 20px;
+}
+
+.menuSpacesAndCart{
+    background-color: #ffffff;
+    float: left;
+    text-align: center;
+}
+
+.menuSpacesAndCart ul{
+    display: inline-flex;
+    list-style: none;
+    color: #FFF;
+    margin-left: -35px;
+}
+
+.menuSpacesAndCart ul li{
+    width: 125px;
+    margin: 5px 2px;
+    padding: 20px 5px;
+    margin-top: -5px;
+}
+
+.menuSpacesAndCart ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+.active,.menuSpacesAndCart ul li:hover{
+    background: #d9dedc;
+    transition:0.6s ;
+}
+.active,.menuSpacesAndCart ul li:hover a{
+    transition:0.1s ;
+}
+
+
+.active,.menuSpacesAndCart ul li::before{
+    background: #7cb3ae;
+    transition:0.6s ;
+}
+
+.box-submenu{
+    display: none;
+}
+
+.menuSpacesAndCart ul li:hover .box-submenu{
+    display: block;
+    position: absolute;
+    background: #7cb3ae;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+.menuSpacesAndCart ul li:hover .box-submenu ul{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menuSpacesAndCart ul li:hover .box-submenu ul li{
+    width: 220px;
+    text-align: left;
+    border-bottom: dotted 1px #FFF;
+    background: transparent;
+    border-radius: 0;
+    padding: 10px 20px;
+}
+
+.menuSpacesAndCart ul li:hover .box-submenu ul li:last-child{
+    border-bottom: none;
+}
+
+.menuSpacesAndCart ul li:hover .box-submenu ul li a:hover{
+    color: #333;
+}
+
+.Login{
+    width: 200px;
+    height: 100%;
+    /* background-color: #0fd180; */
+    float: left;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #e6f4ec;
+    padding: 5px;
+    width: 130px;
+    margin-top: 5px;
+    margin-left: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    border: none;
+    padding: 5px 5px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sign-up {
+    background-color: #00ab5b;
+    color: white;
+}
+
+.log-in {
+    background-color: transparent;
+    color: #00ab5b;
+}
+
+.menu-container {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+}
+
+.menuCongNghe {
+    display: flex;
+    overflow-x: hidden; /* Ẩn thanh cuộn ngang */
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.menuCongNghe ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menuCongNghe li {
+    flex: none;
+    padding: 4px 20px;
+    margin: 0 5px;
+    /* background-color: #4CAF50; */
+    color: white;
+    text-align: center;
+    /* border-radius: 5px; */
+}
+
+.menuCongNghe li:hover {
+    background-color: #8fa390;
+    cursor: pointer;
+  }
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+    background-color: black;
+    height: 95%;
+}
+
+.left-arrow {
+  left: -35px;
+}
+
+.right-arrow {
+  right: -35px;
+}
+
+.hidden {
+  display: none;
 }
