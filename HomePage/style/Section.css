@@ -257,3 +257,77 @@
     height: 400px;
     overflow-x: hidden;
 }
+
+#section4{
+    width: 100%;
+    height: 550px;
+    overflow-x: hidden;
+    background: linear-gradient(to right, #33d951, #7f8a8f, #e2e44b);
+}
+
+.section4-Trai .button {
+    display: block;
+    width: 200px;
+    margin: 20px 0px;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.learn-html {
+    background-color: #28a745;
+}
+
+.video-tutorial {
+    background-color: #d1c088;
+    color: black;
+}
+
+.html-reference {
+    background-color: #516b85;
+}
+
+.get-certified {
+    background-color: #dca2a7;
+    color: black;
+}
+
+.right {
+    float: left;
+    margin-top: 90px;
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Ensures that the container does not overflow */
+    box-sizing: border-box;
+    font-size: 9.5px;
+    overflow: hidden;
+    width: 500px;
+}
+
+.code {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding-left: -90px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+    box-sizing: border-box;
+}
+
+.try-it {
+    margin-top: 10px;
+    background-color: #28bc55;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
