@@ -1,0 +1,42 @@
+.Menu-Tutorial-Pages {
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-top: 20px;
+  width: 18%;
+  height: auto; /* Điều chỉnh chiều cao */
+  background-color: #eae4e4;
+  overflow-y: scroll; /* Hiển thị thanh cuộn dọc nếu cần */
+}
+
+.Menu-Tutorial-Pages ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.Menu-Tutorial-Pages a {
+  text-decoration: none;
+  color: #333;
+  padding: 1px 10px 1px 40px;
+  font-size: 14px;
+  display: block;
+}
+
+.Menu-Tutorial-Pages a:hover {
+  background-color: #a8b8ac;
+  color: #333;
+}
+
+.Menu-Tutorial-Pages h2 {
+  font-size: 18px;
+  font-weight: 400;
+  padding-left: 20px;
+  margin-top: -5px;
+}
+
+.Menu-Tutorial-active {
+  background-color: #0fbc3e !important;
+}
+
+li {
+  cursor: pointer;
+}

@@ -1,0 +1,185 @@
+/* Content area */
+.Content-Tutorial-Pages {
+  width: 82%;
+  height: 100%;
+  background-color: #FFF; 
+  color: white;
+  overflow-y: hidden; 
+}
+
+.Content-Tutorial-left {
+  margin-left: -12px;
+  width: 870px;
+  height: auto;
+  min-height: 600px;
+  background-color: #FFF;
+}
+
+.btn-home{
+  float: left;
+  margin-left: 40px;
+}
+
+.btn-next {
+  float: right;
+  margin-right: 40px;
+}
+
+.btn-Study{
+  margin-left: 40px;
+  float: left;
+}
+
+
+
+.btn-Custom-Content-Tutorial{
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 10px 40px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.btn-home:hover, .btn-next:hover {
+  background-color: #218838;
+}
+
+.btn-home::before {
+  content: "❮";
+  margin-right: 5px;
+}
+
+.btn-next::after {
+  content: "❯";
+  margin-left: 5px;
+}
+
+.btn-TryItYourSelf::after {
+  content: "❯❯";
+  margin-left: 5px;
+  font-size: 9px; /* Thay đổi kích thước chữ ở đây */
+}
+
+
+
+.Content-button {
+  width: 100%;
+  height: auto;
+  background-color: #FFF;
+  float: left;
+}
+
+.Content-Data-Home{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  background-color: #c8e6cd;
+  padding-left: 38px;
+  float: left;
+}
+
+.Content-Data-Home h6{
+  color: #333;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.Content-Data-Home-2{
+  padding-top: 40px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+hr.full-width {
+  border: none;
+  height: 0.5px;
+  background-color: #000;
+  width: 100%;
+  margin-top: -30px;
+  float: left;
+}
+
+.Content-Data-Home-2 a{
+  font-size: 28px;
+  float: left;
+  margin-top: -10px;
+  margin-left: 40px;
+}
+
+.Content-Data-Home-2 h6{
+  color: #333;
+  font-size: 15px;
+  float: left;
+  margin-top: -10px;
+  margin-left: 40px;
+}
+
+.Content-Data-Home-3{
+  padding-top: 40px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  margin-left: 1%;
+  width: 97.5%;
+  height: 420px;
+  float: left;
+  background-color: #eae4e4;
+  border-radius: 5px;
+}
+
+.Content-Data-Home-3 a{
+  margin-top: -20px;
+  float: left;
+  margin-left: 30px;
+  font-size: 21px;
+}
+
+.Content-Data-Home-4{
+  padding-top: 40px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  float: left;
+  background-color: #FFF;
+}
+
+.Content-Data-Home-4 h6{
+  margin-top: -25px;
+  float: left;
+  margin-left: 45px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.Content-Data-Home-4 a{
+  font-size: 28px;
+  float: left;
+  margin-top: 10px;
+  margin-left: 45px;
+}
+
+
+/* Right */
+.Content-Tutorial-right{
+  margin-top: -800px;
+  width: 140px;
+  height: auto;
+  min-height: 600px;
+  float: left;
+}
