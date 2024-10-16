@@ -100,7 +100,7 @@ window.onload = function() {
 
 // Hàm chuyển tới trang checkout
 function proceedToCheckout() {
-    window.location.href = "checkout.html"; // Chuyển đến trang checkout
+    window.location.href = "CheckOutPage.html"; // Chuyển đến trang checkout
 }
 
 // Hàm xóa sản phẩm khỏi giỏ hàng

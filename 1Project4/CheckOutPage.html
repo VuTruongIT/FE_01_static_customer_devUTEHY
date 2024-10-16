@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="style/CheckOutPages/CheckOutPages.css">
+</head>
+<body>
+
+<!-- Phần banner checkout -->
+<div class="banner-checkout">
+    <!-- Logo bên trái -->
+    <img src="img/DevUTEHY.jpg" alt="Company Logo" style="width: 100px;height: 100px;">
+    
+    <!-- Link trở về giỏ hàng với icon -->
+    <a href="CartPages.html">
+        Shopping Cart
+        <img src="img/imgCoursePages/cart-shopping-solid (1).svg" alt="Giỏ hàng">
+    </a>
+</div>
+
+<div class="container">
+    <!-- Phần bên trái: Nhập thông tin thanh toán -->
+    <div class="checkout-left">
+        <h2>Thông tin thanh toán</h2>
+        <form id="checkout-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Nhập email của bạn" required>
+
+            <label for="card-number">Số thẻ tín dụng:</label>
+            <input type="number" id="card-number" placeholder="Nhập số thẻ tín dụng" required>
+
+            <label for="expiry-date">Ngày hết hạn (MM / YY):</label>
+            <input type="text" id="expiry-date" placeholder="MM / YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" placeholder="Nhập CVV" required>
+
+            <label for="name-on-card">Tên trên thẻ:</label>
+            <input type="text" id="name-on-card" placeholder="Nhập tên trên thẻ" required>
+
+            <h2>Địa chỉ thanh toán</h2>
+            <label for="country">Quốc gia:</label>
+            <select id="country" required>
+                <option value="vietnam">Việt Nam</option>
+                <option value="us">Hoa Kỳ</option>
+            </select>
+
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" placeholder="Nhập địa chỉ" required>
+
+            <label for="city">Thành phố:</label>
+            <input type="text" id="city" placeholder="Nhập thành phố" required>
+
+            <label for="postal-code">Mã bưu điện:</label>
+            <input type="text" id="postal-code" placeholder="Nhập mã bưu điện" required>
+
+            <button type="submit">Thanh toán ngay</button>
+        </form>
+    </div>
+
+    <!-- Phần bên phải: Hiển thị khóa học -->
+    <div class="checkout-right">
+        <h2>Khóa học của bạn</h2>
+        <div class="order-summary" id="order-summary">
+            <!-- Dữ liệu khóa học sẽ được hiển thị ở đây -->
+        </div>
+
+        <div class="total" id="total-amount">Tổng cộng: $0.00</div>
+    </div>
+</div>
+<script src="script/CheckOutPages/CheckOut.js"></script>
+
+</body>
+</html>
