@@ -1,0 +1,185 @@
+.Banner-CoursePages{
+    width: 100%;
+    height: 130px;
+    background-color: #FFF;
+    float: left;
+}
+
+.Banner-Course-GioiThieu{
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    background-color: rgb(20, 186, 84);
+    float: left;
+}
+
+.Banner-Course-GioiThieu a{
+    font-weight: 700;
+    color: #FFF;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding: 15px 0;
+}
+
+.Banner-Course-Menu{
+    width: 100%;
+    height: 80px;
+    /* background-color: #95dd93; */
+    float: left;
+}
+
+.Banner-Course-Menu-Chinh{
+    width: 100%;
+    height: 50px;
+    /* background-color: #95dd93; */
+    float: left;
+}
+
+.Banner-Course-Menu-Chinh ul {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-left: 18px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    float: left;
+}
+
+.Banner-Course-Menu-Chinh li {
+    display: inline;
+    float: left;
+    margin-left: 30px;
+}
+
+.Banner-Course-Menu-Chinh a {
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    /* padding: 10px 15px; */
+    transition: color 0.3s ease;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.Banner-Course-Menu-Chinh a:hover {
+    color: gray;
+}
+
+.TT-Course{
+    width: 100%;
+    height: 30px;
+    float: left;
+    margin-top: 20px;
+}
+
+.TT-Course a{
+    font-family: Arial, Helvetica, sans-serif;
+     text-decoration: none;
+     color: #333;
+     font-size: 15px;
+     margin-top: 10px;
+}
+
+.TT-Course-2{
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.TT-Course-2 a{
+    font-family: Arial, Helvetica, sans-serif;
+     text-decoration: none;
+     color: #333;
+     font-size: 36px;
+     margin-top: 10px;
+     margin-left: 44px;
+}
+
+.Content-Course{
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    /* background-color: rgb(63, 109, 109); */
+    float: left;
+    margin-top: 40px;
+}
+
+.Content-Course-Left{
+    margin-left: 40px;
+    width: 200px;
+    height: 100%;
+    min-height: 100px;
+    float: left;
+    /* background-color: #95dd93; */
+}
+
+.Content-Course-Right{
+    margin-left: 40px;
+    width: 950px;
+    height: auto;
+    min-height: 20px;
+    float: left;
+}
+
+.Content-Course-Right a{
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Content-Course-Right-2{
+    margin-left: 40px;
+    width: 950px;
+    height: auto;
+    min-height: 1000px;
+    float: left;
+    /* background-color: #95dd93; */
+}
+
+.Product-Course{
+    width: 215px;
+    height: 340px;
+    background-color: #FFF;
+    margin: 10px;
+    float: left;
+}
+
+.Product-Course:hover .course-img {
+    content: url('../../img/imgCoursePages/CC-BackEnd-NodeJS.png'); /* Đường dẫn đến hình ảnh thay thế */
+    transition: all 0.3s ease;
+    width: 92%; 
+    border-radius: 2px; 
+    padding: 5px; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.buy-now-btn{
+    cursor: pointer;
+}
+
+
+
+/* Product */
+.loading {
+    background-color: #ccc;
+    cursor: not-allowed;
+    height: 35px;
+    width: 190px;
+}
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

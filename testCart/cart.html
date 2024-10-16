@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        .quantity-controls {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        .disabled-btn {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+        .remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0 10px;
+            margin-left: 10px;
+        }
+        .remove-btn:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    
+    <div id="cart-items"></div>
+    <p id="total-price"></p>
+    <button id="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+
+    <script>
+        // Hàm load giỏ hàng và hiển thị các sản phẩm trong giỏ hàng
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = "";
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+                document.getElementById('checkout-btn').style.display = "none";
+            } else {
+                cart.forEach(function(item, index) {
+                    totalPrice += item.total;
+                    let minusButtonClass = item.quantity === 1 ? 'disabled-btn' : '';
+
+                    let productDiv = document.createElement('div');
+                    productDiv.innerHTML = `
+                        <p>${item.name} - $${item.price} x ${item.quantity} = $${item.total} 
+                        <span class="quantity-controls">
+                            <button class="quantity-btn ${minusButtonClass}" onclick="decreaseQuantity(${index})" ${item.quantity === 1 ? 'disabled' : ''}>-</button>
+                            <button class="quantity-btn" onclick="increaseQuantity(${index})">+</button>
+                        </span>
+                        <button class="remove-btn" onclick="removeFromCart(${index})">x</button>
+                        </p>`;
+                    cartItemsDiv.appendChild(productDiv);
+                });
+
+                document.getElementById('total-price').innerText = `Total Price: $${totalPrice}`;
+                document.getElementById('checkout-btn').style.display = "block";
+            }
+        }
+
+        // Hàm chuyển tới trang checkout
+        function proceedToCheckout() {
+            window.location.href = "checkout.html"; // Chuyển đến trang checkout
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function increaseQuantity(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity += 1;
+            cart[index].total = cart[index].quantity * cart[index].price;
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function decreaseQuantity(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart[index].quantity > 1) {
+                cart[index].quantity -= 1;
+                cart[index].total = cart[index].quantity * cart[index].price;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

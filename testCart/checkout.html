@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <style>
+        .product-item {
+            margin-bottom: 10px;
+        }
+        .checkout-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <div id="checkout-items"></div>
+    <p id="checkout-total-price"></p>
+
+    <div class="checkout-info">
+        <h2>Shipping Information</h2>
+        <form id="checkout-form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="address">Address:</label><br>
+            <input type="text" id="address" name="address" required><br><br>
+            
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <script>
+        // Hàm load giỏ hàng từ localStorage và hiển thị trong trang checkout
+        function loadCheckout() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let checkoutItemsDiv = document.getElementById('checkout-items');
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                checkoutItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cart.forEach(function(item) {
+                    totalPrice += item.total;
+                    let productDiv = document.createElement('div');
+                    productDiv.classList.add('product-item');
+                    productDiv.innerHTML = `<p>${item.name} - $${item.price} x ${item.quantity} = $${item.total}</p>`;
+                    checkoutItemsDiv.appendChild(productDiv);
+                });
+
+                document.getElementById('checkout-total-price').innerText = `Total Price: $${totalPrice}`;
+            }
+        }
+
+        // Tải giỏ hàng khi trang được load
+        window.onload = loadCheckout;
+
+        // Hàm xử lý đơn hàng sau khi form được submit
+        document.getElementById('checkout-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Ngăn không cho form nạp lại trang
+
+            // Lấy thông tin từ form
+            let name = document.getElementById('name').value;
+            let address = document.getElementById('address').value;
+            let phone = document.getElementById('phone').value;
+            let email = document.getElementById('email').value;
+
+            // In ra console thông tin đơn hàng (có thể thay thế bằng xử lý thanh toán thực tế)
+            console.log("Order placed by:", name, address, phone, email);
+
+            // Xóa giỏ hàng sau khi đặt hàng
+            localStorage.removeItem('cart');
+            alert("Order placed successfully!");
+            window.location.href = "index.html"; // Quay lại trang chính sau khi đặt hàng
+        });
+    </script>
+</body>
+</html>

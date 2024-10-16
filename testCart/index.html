@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Add to Cart</title>
+    <style>
+        .loading {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    
+    <div id="products">
+        <div class="product">
+            <p>Product 1</p>
+            <input type="number" id="quantity-product-1" value="1" min="1">
+            <button id="btn-product-1" onclick="addToCart('Product 1', 100, 'quantity-product-1')">Add to Cart - $100</button>
+        </div>
+        <div class="product">
+            <p>Product 2</p>
+            <input type="number" id="quantity-product-2" value="1" min="1">
+            <button id="btn-product-2" onclick="addToCart('Product 2', 150, 'quantity-product-2')">Add to Cart - $150</button>
+        </div>
+        <div class="product">
+            <p>Product 3</p>
+            <input type="number" id="quantity-product-3" value="1" min="1">
+            <button id="btn-product-3" onclick="addToCart('Product 3', 200, 'quantity-product-3')">Add to Cart - $200</button>
+        </div>
+    </div>
+
+    <br>
+    <a href="cart.html">Go to Cart</a>
+
+    <script>
+        // Function to check if a product is already in the cart
+        function isInCart(productName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            return cart.some(item => item.name === productName);
+        }
+
+        // Disable the button and show spinner if product is already in cart
+        function disableButton(buttonId) {
+            let button = document.getElementById(buttonId);
+            button.disabled = true;
+            button.classList.add('loading');
+            button.innerHTML = 'Already in Cart <span class="spinner"></span>';
+        }
+
+        // Enable button back when item is removed from the cart
+        function enableButton(buttonId, productName, productPrice) {
+            let button = document.getElementById(buttonId);
+            button.disabled = false;
+            button.classList.remove('loading');
+            button.innerHTML = `Add to Cart - $${productPrice}`;
+        }
+
+        // Add product to cart with quantity
+        function addToCart(productName, productPrice, quantityId) {
+            let quantity = document.getElementById(quantityId).value;
+
+            if (isInCart(productName)) {
+                return; // Do nothing if the product is already in cart
+            }
+
+            // Get existing cart from localStorage or initialize as empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add new product to the cart with quantity and total price
+            cart.push({
+                name: productName,
+                price: productPrice,
+                quantity: parseInt(quantity), // Store quantity as integer
+                total: productPrice * parseInt(quantity) // Calculate total price for this item
+            });
+
+            // Save updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Disable the button after adding to cart
+            disableButton(`btn-${productName.toLowerCase().replace(/\s+/g, '-')}`);
+
+            alert(productName + " has been added to your cart.");
+        }
+
+        // Check the cart status on page load
+        function checkCartStatus() {
+            let products = [
+                { name: 'Product 1', price: 100 },
+                { name: 'Product 2', price: 150 },
+                { name: 'Product 3', price: 200 }
+            ];
+
+            products.forEach(product => {
+                if (isInCart(product.name)) {
+                    disableButton(`btn-${product.name.toLowerCase().replace(/\s+/g, '-')}`);
+                }
+            });
+        }
+
+        // Run on page load
+        window.onload = checkCartStatus;
+    </script>
+</body>
+</html>
