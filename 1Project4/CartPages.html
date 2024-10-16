@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="style/CoursePages/Banner.css">
+    <link rel="stylesheet" href="style/CartPages/Content-Cart.css">
+</head>
+<body>
+    <div class="Banner-Course-Pages">
+        <div class="Banner-Course-GioiThieu">
+            <a style="font-weight: 700;color: #FFF;">NEW: Full Access With Plus Subscription</a>
+        </div>
+        <div class="Banner-Course-Menu">
+            <img src="img/Dev-UTEHY-Fotter-ThayDoi.png" alt="" style="width: 100px; margin-top: -10px; float: left; margin-left: 30px;">
+            <div style="float: left; margin-left: 20px;margin-top: 19px;">
+                <select style="padding: 10px; border: 1px solid greenyellow; background-color: white; color: #333; font-size: 16px; font-family: Arial, sans-serif; transition: border-color 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); outline: none;cursor: pointer;">
+                    <option selected>All categories</option>
+                    <option disabled>---</option>
+                    <option>Certification</option>
+                    <option>Course</option>
+                    <option>Subscription</option>
+                </select>
+                
+            </div>
+            <div style="float: left; margin-left: 10px;">
+                <input type="text" placeholder="What are you looking for?" style="padding: 10.2px; width: 680px;margin-top: 18px;margin-left: -10px;  border: 2px solid #8bdc6d; font-size: 16px; font-family: Arial, sans-serif; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: border-color 0.3s ease, box-shadow 0.3s ease; outline: none;">
+            </div>            
+            <div style="float: left; margin-left: 10px;">
+                <button style="background-color: #33cb42; border: 1px rgb(216, 216, 19) solid; padding: 10.2px 15px;margin-top: 19.2px;margin-left: -12px;cursor: pointer;">
+                    <img src="img/imgCoursePages/magnifying-glass-solid.svg" alt="search" style="width: 16px;">
+                </button>
+            </div>
+            <div style="float: left; margin-left: 20px;">
+                <a href="#" style="margin-left: 20px;margin-top: 30px;float: left;">
+                    <img src="img/imgCoursePages/cart-shopping-solid (1).svg" alt="cart" style="width: 24px;color: #33cb42;margin-top: -2px;float: left;">
+                    <a href="#cart" style="text-decoration: none;font-weight: bold;color: #333;margin-top: 30px;float: left;margin-left: 10px;">Shopping Cart</a>
+                </a>
+            </div>
+        </div>
+        <div class="Banner-Course-Menu-Chinh">
+            <ul>
+                <li><a href="#">Full Access</a></li>
+                <li><a href="#">Career Paths</a></li>
+                <li><a href="#">Certificate Courses</a></li>
+                <li><a href="#">Certification Exams</a></li>
+                <li><a href="#">Servers</a></li>
+                <li><a href="#">For Teachers</a></li>
+                <li><a href="#">For Businesses</a></li>
+            </ul>
+        </div>
+        <hr>
+    </div>
+
+    <div class="Content-Cart">
+        <a style="font-family: Arial, Helvetica, sans-serif; font-size: 30px; margin-top: 50px; float: left; margin-left: 20px;">Giỏ hàng của bạn</a>
+        
+        <div style="float: right; margin-right: 20px; text-align: right;">
+            <button onclick="proceedToCheckout()" style="background-color: #2cc54f; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 18px; padding: 10px 14px; border: none; cursor: pointer;border-radius: 5px; margin-top: 50px;margin-right: 20px;">
+                <img src="img/imgCoursePages/cart-shopping-solid (1).svg" alt="cart" style="width: 20px; margin-right: 10px;">
+                Thanh toán
+            </button>
+            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin: 0;margin-right: 180px;margin-top: -46px;">Thành:</p>
+            <p id="subtotal" style="font-family: Arial, Helvetica, sans-serif; font-size: 28px; margin: 0;margin-right: 180px;margin-top: 4px;">$0.00</p>
+        </div>
+    </div>
+    <div id="cart-items" style="width: 100%;height: auto;"></div>
+    
+    <hr>
+    <div style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center;">
+        <a href="CoursePages.html" style="text-decoration: none; color: #2cc54f; font-size: 20px; font-weight: 600;margin-top: -150px;">Quay trở lại giỏ hàng</a>
+    </div>
+    
+    
+    <script>
+        let quantity = 1;
+
+        function increaseQuantity() {
+            quantity++;
+            document.getElementById("quantity").innerText = quantity;
+        }
+
+        function decreaseQuantity() {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById("quantity").innerText = quantity;
+            }
+        }
+    </script>
+
+    <script src="script/CartPages/Cart.js"></script>
+</body>
+</html>
